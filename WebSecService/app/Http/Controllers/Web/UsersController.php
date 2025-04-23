@@ -320,4 +320,21 @@ class UsersController extends Controller {
         );
         Auth::login();
     }
+
+    public function redirectToGoogle(){
+        return Socialite::driver('google')->redirect();
+        
+    }
+
+    public function handleGoogleCallback(){
+        $userGoogle = Socialite::driver('google')->stateless()->user();
+        $user = User::firstOrCreate(
+            ['google_id'=>$userGoogle->getId()],
+            ['google_name'=>$userGoogle->getName(),
+            'google_email'=>$userGoogle->getEmail()],
+
+        );
+        Auth::login();
+    }
+
 }
