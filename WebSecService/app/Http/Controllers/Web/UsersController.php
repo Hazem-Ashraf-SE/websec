@@ -12,6 +12,7 @@ use Artisan;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Laravel\Socialite\Facades\Socialite;
 
 class UsersController extends Controller {
 
@@ -301,5 +302,22 @@ class UsersController extends Controller {
         $user->save();
 
         return redirect(route('profile', ['user'=>$user->id]));
+    }
+
+
+    public function redirectToFacebook(){
+        return Socialite::driver('facebook')->redirect();
+        
+    }
+
+    public function handleFacebookCallback(){
+        $userFacebook = Socialite::driver('facebook')->stateless()->user();
+        $user = User::firstOrCreate(
+            ['facebook_id'=>$userFacebook->getId()],
+            ['facebook_name'=>$userFacebook->getName(),
+            'facebook_email'=>$userFacebook->getEmail()],
+
+        );
+        Auth::login();
     }
 }

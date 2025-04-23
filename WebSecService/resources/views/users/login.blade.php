@@ -28,6 +28,10 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                             <a href="{{ route('register') }}" class="btn btn-outline-secondary">Register New Account</a>
                         </div>
+                        <div class="form-group mb-2">
+                            <a href="{{ route('login_with_google') }}" class="btn btn-success">Login with Google</a>
+                            <a href="{{ route('redirectToFacebook') }}" class="btn btn-success">Login with Facebook</a>
+
                     </form>
                 </div>
             </div>

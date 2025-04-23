@@ -95,3 +95,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/credit/history', [App\Http\Controllers\Web\CreditController::class, 'transactionHistory'])
         ->name('credit.history');
 });
+
+Route::get('verify', [UsersController::class, 'verify'])->name('verify');
+
+Route::get('auth/facebook', [UsersController::class, 'redirectToFacebook'])->name('redirectToFacebook');
+Route::get('auth/facebook/callback', [UsersController::class, 'handleFacebookCallback'])->name('handleFacebookCallback');
+
