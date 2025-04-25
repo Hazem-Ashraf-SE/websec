@@ -64,6 +64,10 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="row mb-0 offset-md-4">
+                        <a href="{{ route('register') }}" class="btn btn-outline-secondary">Don't have an account? Register</a>
+                            <a href="{{ route('redirectToFacebook') }}" class="btn btn-success">Login with Facebook</a>
+                        </div>
                     </form>
                 </div>
             </div>
