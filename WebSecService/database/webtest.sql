@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2025 at 06:55 PM
+-- Generation Time: Apr 26, 2025 at 11:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -122,7 +122,7 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:5:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:12:\"display_name\";s:1:\"d\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:8:{i:0;a:5:{s:1:\"a\";i:1;s:1:\"b\";s:12:\"add_products\";s:1:\"c\";s:12:\"Add Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:1;a:5:{s:1:\"a\";i:2;s:1:\"b\";s:13:\"edit_products\";s:1:\"c\";s:13:\"Edit Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:5:{s:1:\"a\";i:3;s:1:\"b\";s:15:\"delete_products\";s:1:\"c\";s:15:\"Delete Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:5:{s:1:\"a\";i:4;s:1:\"b\";s:10:\"show_users\";s:1:\"c\";s:10:\"Show Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:4;a:5:{s:1:\"a\";i:5;s:1:\"b\";s:10:\"edit_users\";s:1:\"c\";s:10:\"Edit Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:5;a:5:{s:1:\"a\";i:7;s:1:\"b\";s:12:\"delete_users\";s:1:\"c\";s:12:\"Delete Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:5:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"admin_users\";s:1:\"c\";s:11:\"Admin Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:5:{s:1:\"a\";i:9;s:1:\"b\";s:8:\"buy_item\";s:1:\"c\";s:8:\"Buy Item\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:3;}}}s:5:\"roles\";a:3:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"d\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:8:\"Employee\";s:1:\"d\";s:3:\"web\";}i:2;a:3:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"Customer\";s:1:\"d\";s:3:\"web\";}}}', 1745254285);
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:5:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:12:\"display_name\";s:1:\"d\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:8:{i:0;a:5:{s:1:\"a\";i:1;s:1:\"b\";s:12:\"add_products\";s:1:\"c\";s:12:\"Add Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:1;a:5:{s:1:\"a\";i:2;s:1:\"b\";s:13:\"edit_products\";s:1:\"c\";s:13:\"Edit Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:5:{s:1:\"a\";i:3;s:1:\"b\";s:15:\"delete_products\";s:1:\"c\";s:15:\"Delete Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:5:{s:1:\"a\";i:4;s:1:\"b\";s:10:\"show_users\";s:1:\"c\";s:10:\"Show Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:4;a:5:{s:1:\"a\";i:5;s:1:\"b\";s:10:\"edit_users\";s:1:\"c\";s:10:\"Edit Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:5;a:5:{s:1:\"a\";i:7;s:1:\"b\";s:12:\"delete_users\";s:1:\"c\";s:12:\"Delete Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:5:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"admin_users\";s:1:\"c\";s:11:\"Admin Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:5:{s:1:\"a\";i:9;s:1:\"b\";s:8:\"buy_item\";s:1:\"c\";s:8:\"Buy Item\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:3;}}}s:5:\"roles\";a:3:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"d\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:8:\"Employee\";s:1:\"d\";s:3:\"web\";}i:2;a:3:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"Customer\";s:1:\"d\";s:3:\"web\";}}}', 1745770901);
 
 -- --------------------------------------------------------
 
@@ -165,7 +165,11 @@ INSERT INTO `credit_transactions` (`id`, `employee_id`, `customer_id`, `amount`,
 (26, 2, 59, 0.00, '2025-04-20 16:53:03'),
 (27, 2, 59, 110000.00, '2025-04-20 16:53:08'),
 (28, 2, 59, -110000.00, '2025-04-20 16:53:11'),
-(29, 2, 59, 110000.00, '2025-04-20 16:53:16');
+(29, 2, 59, 110000.00, '2025-04-20 16:53:16'),
+(30, 2, 59, -110000.00, '2025-04-25 04:58:43'),
+(31, 2, 59, 110000.00, '2025-04-25 04:58:51'),
+(32, 2, 59, -110000.00, '2025-04-26 18:16:32'),
+(33, 2, 59, 110000.00, '2025-04-26 18:16:40');
 
 -- --------------------------------------------------------
 
@@ -364,19 +368,19 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `price`, `model`, `description`, `photo`, `in_stock`, `quantity`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'TV01', 'LG TV 50 Insh', 28000, 'LG8768787', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_lgtv50.jpg', NULL, 2, NULL, '2025-04-12 17:24:23', NULL),
+(1, 'TV01', 'LG TV 50 Insh', 28000, 'LG8768787', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_lgtv50.jpg', NULL, 5, NULL, '2025-04-26 15:19:28', NULL),
 (2, 'RF01', 'Toshipa Refrigerator 14\"', 22000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_tsrf50.jpg', NULL, 8, NULL, '2025-04-12 17:24:30', NULL),
 (3, 'RF02', 'Toshipa Refrigerator 18\"', 28000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_rf2.jpg', NULL, 8, NULL, '2025-04-12 17:24:39', NULL),
 (4, 'RF03', 'Toshipa Refrigerator 19\"', 32000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_rf3.jpg', NULL, 8, NULL, '2025-04-12 17:24:57', NULL),
 (5, 'TV02', 'LG TV 55\"', 23000, 'LG8768787', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_tv2.jpg', NULL, 9, NULL, '2025-04-12 17:25:08', NULL),
-(6, 'RF04', 'LG Refrigerator 14\"', 22000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_rf4.jpg', NULL, 9, NULL, '2025-04-12 17:25:19', NULL),
+(6, 'RF04', 'LG Refrigerator 14\"', 22000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_rf4.jpg', '0', 0, NULL, '2025-04-26 17:01:13', NULL),
 (7, 'TV03', 'LG TV 60\"', 44000, 'LG8768787', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_tv3.jpg', 'Yes', 8, NULL, '2025-04-12 17:25:29', NULL),
 (8, 'RF05', 'Toshipa Refrigerator 12\"', 10700, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_rf5.jpg', NULL, 9, NULL, '2025-04-12 17:25:38', NULL),
 (9, 'TV04', 'LG TV 99\"', 108000, 'LG8768787', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_tv4.jpg', NULL, 0, NULL, '2025-04-12 15:23:23', NULL),
-(10, 'RF05', 'Toshipa Refrigerator 19\"', 44000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'products/1744481138_rf4.jpg', NULL, 4, '2025-02-25 03:18:04', '2025-04-12 12:14:52', NULL),
+(10, 'RF05', 'LG Refrigerator 19\"', 44000, 'TS76634', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'storage/products/qIxoQFCGNiMm6jFJxngZfg5ayXesOFJJ8rT1gsDZ.jpg', '0', 0, '2025-02-25 03:18:04', '2025-04-26 17:08:50', NULL),
 (27, 'VC07', 'Vacuum Cleaner', 50000, 'Toshiba', 'Vacuum Cleaner by Toshiba. Switch the dirty floor to mirror floor', 'products/1744482308_1_g2e2-6e.jpg', '0', 6, '2025-04-12 16:25:08', '2025-04-12 22:29:23', NULL),
-(31, 'MR0011', 'Samsung Microwave', 55000, 'Samsung', 'Samsung Microwave is good for foods', 'products/k6wL3QbLmAXw2HjcjRND1OsD73tJKtUP4hqF2sBU.jpg', '0', 0, '2025-04-12 22:05:28', '2025-04-12 22:32:22', NULL),
-(33, 'GS0066', 'Fresh Gas stove', 30000, 'Fresh', 'Fresh Gas stove is good for food cocking', 'storage/products/M30z0T1knQ6cCmG9mTOPnBfKOkQxvhJCCB26nw53.jpg', '0', 0, '2025-04-12 23:05:30', '2025-04-13 22:15:46', NULL);
+(31, 'MR0011', 'Samsung Microwave', 55000, 'Samsung', 'Samsung Microwave is good for foods', 'storage/products/igUM8AVAQ0cqkie0tollf1jutibvsbUVRSifW2LZ.jpg', '0', 0, '2025-04-12 22:05:28', '2025-04-26 17:07:59', NULL),
+(33, 'GS0066', 'Fresh Gas stove', 30000, 'Fresh', 'Fresh Gas stove is good for food cocking', 'storage/products/EiVq11fqji0CnY59e17p6zhbzgjwW2T4KObW0JM5.jpg', '0', 0, '2025-04-12 23:05:30', '2025-04-26 17:08:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -524,9 +528,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('csdca1IE37cSJucBRUl78XwQDxphS8sub97fwWPw', 59, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRERXQUlrdW5xNVUySkZsVFJBVWNwdjJZa0hweXQ2VWFOQkJxSm5lQiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjQ6ImF1dGgiO2E6MTp7czoyMToicGFzc3dvcmRfY29uZmlybWVkX2F0IjtpOjE3NDUxNjgwMDg7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjU5O30=', 1745168052),
-('dw70cykfLNJIMzostsAiyFp2ud5EcnJGyJiC2VqR', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMnRpVGtxMm85TnlqV0RWajFDaXc5eXNxdnJOUmhrbnRzQUxzM2thMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc0NDYyNzM1ODt9fQ==', 1744631694),
-('kzkFL4QfBFWPLEbZmKZrJD2XpiBOkgiRX8ZH1Gwp', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoieVFkM0JxRHdua1hhbFc2Qk5KNEJkbEJpd1VkWGp0RENhcEVuc0h3aSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91c2VycyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo0OiJhdXRoIjthOjE6e3M6MjE6InBhc3N3b3JkX2NvbmZpcm1lZF9hdCI7aToxNzQ0NzAxMzkyO319', 1744701424);
+('fpZrxblRVnkK8TfqGLtSumVTFFeyJCBquhWfhggD', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiR0ZBMjNKVGJTc0YzZ3FpMGFHQ3QyclNQQ1l3MW5mMjQ2VFlMSklXZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6InVlVGJaR3lrajI3RHFaanQ1TU05ZzM5NHR0TVZkOTBIMTlaWXU4OG0iO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc0NTY4NDQ5OTt9czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozMDoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3Byb2R1Y3RzIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1745703310);
 
 -- --------------------------------------------------------
 
@@ -539,25 +541,28 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `credit` decimal(12,2) NOT NULL DEFAULT 0.00,
   `created_by` text DEFAULT NULL,
-  `google_id` varchar(255) DEFAULT NULL
+  `google_id` varchar(255) DEFAULT NULL,
+  `provider` varchar(20) DEFAULT NULL,
+  `provider_id` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `credit`, `created_by`, `google_id`) VALUES
-(1, 'Hazem', 'hazem230104892@sut.edu.eg', NULL, '$2y$12$CsOC62YaWhbf.J5LizSL..MaT5VAHvx0saIdh1jEh7fMx5jK9/gEW', NULL, '2025-04-11 10:45:29', '2025-04-11 10:45:29', 0.00, NULL, NULL),
-(2, 'Andrew', 'universe25349@gmail.com', NULL, '$2y$12$FX/APZcIQSKtTzYMqFt0KOtwOnQTSB0uyHWzzixRKEw6p216Y2hcS', NULL, '2025-04-11 10:47:09', '2025-04-11 10:47:09', 0.00, NULL, NULL),
-(22, 'Amjad', 'Allinonev14-250@outlook.com', NULL, '$2y$12$.AX9JY1ClaxN.m5FEppADepzyse9tZrOKH4x/uJOYpfO8HB16qyWy', NULL, '2025-04-11 19:31:07', '2025-04-11 19:31:07', 200000.00, NULL, NULL),
-(55, 'Yousef', 'hazemsalam33@gmail.com', NULL, '$2y$12$UQodP1O0GDhthTNGu6SGbOMJnmJ/tzxauLzjuINQP1e6xQlIOkSw6', NULL, '2025-04-12 22:42:50', '2025-04-12 22:42:50', 180000.00, NULL, NULL),
-(59, 'Mohamed', 'lima.sam2025@outlook.com', NULL, '$2y$12$HrkEUQ5xBHzIRDfF7vhI2.ZeOICg7UPVLnwmtugDlcKxYKcTS2x66', NULL, '2025-04-20 14:52:19', '2025-04-20 14:52:19', 110000.00, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `credit`, `created_by`, `google_id`, `provider`, `provider_id`, `avatar`) VALUES
+(1, 'Hazem', 'hazem230104892@sut.edu.eg', NULL, '$2y$12$CsOC62YaWhbf.J5LizSL..MaT5VAHvx0saIdh1jEh7fMx5jK9/gEW', NULL, '2025-04-11 10:45:29', '2025-04-11 10:45:29', 0.00, NULL, NULL, NULL, NULL, NULL),
+(2, 'Andrew', 'universe25349@gmail.com', NULL, '$2y$12$FX/APZcIQSKtTzYMqFt0KOtwOnQTSB0uyHWzzixRKEw6p216Y2hcS', NULL, '2025-04-11 10:47:09', '2025-04-11 10:47:09', 0.00, NULL, NULL, NULL, NULL, NULL),
+(22, 'Amjad', 'Allinonev14-250@outlook.com', NULL, '$2y$12$.AX9JY1ClaxN.m5FEppADepzyse9tZrOKH4x/uJOYpfO8HB16qyWy', NULL, '2025-04-11 19:31:07', '2025-04-11 19:31:07', 200000.00, NULL, NULL, NULL, NULL, NULL),
+(55, 'Yousef', 'hazemsalam33@gmail.com', NULL, '$2y$12$UQodP1O0GDhthTNGu6SGbOMJnmJ/tzxauLzjuINQP1e6xQlIOkSw6', NULL, '2025-04-12 22:42:50', '2025-04-12 22:42:50', 180000.00, NULL, NULL, NULL, NULL, NULL),
+(59, 'Mohamed', 'lima.sam2025@outlook.com', NULL, '$2y$12$HrkEUQ5xBHzIRDfF7vhI2.ZeOICg7UPVLnwmtugDlcKxYKcTS2x66', NULL, '2025-04-20 14:52:19', '2025-04-20 14:52:19', 110000.00, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Triggers `users`
@@ -723,7 +728,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `credit_transactions`
 --
 ALTER TABLE `credit_transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

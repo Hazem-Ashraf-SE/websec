@@ -64,14 +64,32 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="row mb-0 offset-md-4">
-                        <a href="{{ route('register') }}" class="btn btn-outline-secondary">Don't have an account? Register</a>
-                            <a href="{{ route('redirectToFacebook') }}" class="btn btn-success">Login with Facebook</a>
-                        </div>
                     </form>
+
+                    <div class="row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <hr>
+                            <p class="text-center">{{ __('Or login with') }}</p>
+                            <div class="d-flex justify-content-center gap-2 mb-3">
+                                <a href="{{ route('socialite.redirect', 'google') }}" class="btn btn-danger">
+                                    <i class="fab fa-google"></i> Google
+                                </a>
+                                <a href="{{ route('socialite.redirect', 'facebook') }}" class="btn btn-primary">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                            </div>
+                            <div class="text-center">
+                                <a href="{{ route('register') }}" class="btn btn-outline-secondary">Don't have an account? Register</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+@endpush
 @endsection

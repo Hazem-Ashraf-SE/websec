@@ -10,6 +10,10 @@ Route::get('register', [UsersController::class, 'register'])->name('register');
 Route::post('register', [UsersController::class, 'doRegister'])->name('do_register');
 Route::get('login', [UsersController::class, 'login'])->name('login');
 Route::post('login', [UsersController::class, 'doLogin'])->name('do_login');
+
+// Social Login Routes
+Route::get('auth/{provider}/redirect', [\App\Http\Controllers\Auth\SocialiteController::class, 'redirect'])->name('socialite.redirect');
+Route::get('auth/{provider}/callback', [\App\Http\Controllers\Auth\SocialiteController::class, 'callback'])->name('socialite.callback');
 Route::get('logout', [UsersController::class, 'doLogout'])->name('do_logout');
 Route::get('users', [UsersController::class, 'list'])->name('users');
 Route::middleware(['auth'])->group(function () {
@@ -23,11 +27,10 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('products', [ProductsController::class, 'list'])->name('products_list');
 Route::get('products/edit/{product?}', [ProductsController::class, 'edit'])->name('products_edit');
-Route::post('products/save/{product?}', [ProductsController::class, 'save'])->name('products_save');
+Route::post('products/save/{product}', [ProductsController::class, 'save'])->name('products.save');
 Route::get('products/delete/{product}', [ProductsController::class, 'delete'])->name('products_delete');
 Route::post('products/{product}/buy', [ProductsController::class, 'buy'])->name('products.buy');
 Route::put('products/{product}/update-quantity', [ProductsController::class, 'updateQuantity'])->name('products.update_quantity');
-Route::post('/products/{id}/save', [ProductsController::class, 'save'])->name('products.save');
 Route::post('/products/return/{user_id}/{product_id}', [ProductsController::class, 'returnProduct'])->name('return_product');
 
 /*
@@ -80,8 +83,6 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Credit Management Routes
@@ -98,9 +99,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('verify', [UsersController::class, 'verify'])->name('verify');
 
-Route::get('auth/facebook', [UsersController::class, 'redirectToFacebook'])->name('redirectToFacebook');
-Route::get('auth/facebook/callback', [UsersController::class, 'handleFacebookCallback'])->name('handleFacebookCallback');
-
-Route::get('auth/google', [UsersController::class, 'redirectToGoogle'])->name('redirectToFacebook');
+Route::get('auth/google', [UsersController::class, 'redirectToGoogle'])->name('redirectToGoogle');
 Route::get('auth/google/callback', [UsersController::class, 'handleGoogleCallback'])->name('handleGoogleCallback');
 
+Route::get('auth/facebook', [UsersController::class, 'redirectToFacebook'])->name('redirectToFacebook');
+Route::get('auth/facebook/callback', [UsersController::class, 'handleFacebookCallback'])->name('handleFacebookCallback');

@@ -62,17 +62,22 @@
                             $photoPath = $product->photo;
                             $imageUrl = '';
                             
-                            if (strpos($photoPath, 'storage/') === 0) {
-                                $imageUrl = asset($photoPath);
-                            } elseif (strpos($photoPath, 'uploads/') === 0) {
-                                $imageUrl = asset($photoPath);
-                            } elseif (strpos($photoPath, 'products/1744481138_') === 0) {
+                            // Case 1: Storage path format
+                            if (strpos($photoPath, 'storage/products/') === 0) {
+                                // Remove 'storage/' from the start since we're using Laravel's storage links
+                                $imageUrl = asset(str_replace('storage/', '', $photoPath));
+                            }
+                            // Case 2: Old format with timestamp prefix (1744481138_)
+                            elseif (strpos($photoPath, 'products/1744') === 0) {
                                 $imageUrl = asset('uploads/' . $photoPath);
-                            } elseif ($product->id == 27 && strpos($photoPath, 'products/1744482308_1_g2e2-6e.jpg') === 0) {
-                                // Special case for Vacuum Cleaner
-                                $imageUrl = asset('images/1_g2e2-6e.jpg');
-                            } else {
-                                $imageUrl = asset('storage/' . $photoPath);
+                            }
+                            // Case 3: Just products prefix
+                            elseif (strpos($photoPath, 'products/') === 0) {
+                                $imageUrl = asset('uploads/' . $photoPath);
+                            }
+                            // Case 4: Just filename or any other case
+                            else {
+                                $imageUrl = asset('uploads/products/' . basename($photoPath));
                             }
                         @endphp
                         

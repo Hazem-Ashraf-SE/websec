@@ -49,7 +49,7 @@ class UsersController extends Controller {
     }
 
 	public function register(Request $request) {
-        return view('users.register');
+        return view('auth.register');
     }
 
     private function ensureCustomerRoleExists()
@@ -124,7 +124,7 @@ class UsersController extends Controller {
     }
 
     public function login(Request $request) {
-        return view('users.login');
+        return view('auth.login');
     }
 
     public function doLogin(Request $request) {
@@ -302,39 +302,6 @@ class UsersController extends Controller {
         $user->save();
 
         return redirect(route('profile', ['user'=>$user->id]));
-    }
-
-
-    public function redirectToFacebook(){
-        return Socialite::driver('facebook')->redirect();
-        
-    }
-
-    public function handleFacebookCallback(){
-        $userFacebook = Socialite::driver('facebook')->stateless()->user();
-        $user = User::firstOrCreate(
-            ['facebook_id'=>$userFacebook->getId()],
-            ['facebook_name'=>$userFacebook->getName(),
-            'facebook_email'=>$userFacebook->getEmail()],
-
-        );
-        Auth::login();
-    }
-
-    public function redirectToGoogle(){
-        return Socialite::driver('google')->redirect();
-        
-    }
-
-    public function handleGoogleCallback(){
-        $userGoogle = Socialite::driver('google')->stateless()->user();
-        $user = User::firstOrCreate(
-            ['google_id'=>$userGoogle->getId()],
-            ['google_name'=>$userGoogle->getName(),
-            'google_email'=>$userGoogle->getEmail()],
-
-        );
-        Auth::login();
     }
 
 }
