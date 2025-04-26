@@ -139,32 +139,24 @@ class ProductsController extends Controller {
 			}
 
 			// Handle file upload
-			if ($request->hasFile('photo')) {
-				$file = $request->file('photo');
-				
-				// Delete old photo if exists
-				if ($product->photo) {
-					// Check if it's a storage path
-					if (strpos($product->photo, 'storage/') === 0) {
-						$oldPath = str_replace('storage/', '', $product->photo);
-						if (Storage::disk('public')->exists($oldPath)) {
-							Storage::disk('public')->delete($oldPath);
-						}
-					} 
-					// Check if it's an uploads path
-					else if (strpos($product->photo, 'uploads/') === 0) {
-						$oldPath = public_path($product->photo);
-						if (file_exists($oldPath)) {
-							unlink($oldPath);
-						}
-					}
-				}
-				
-				// Store the file in the storage/app/public/products directory
-				$path = $file->store('products', 'public');
-				
-				// Update product photo path to use storage URL
-				$product->photo = 'storage/' . $path;
+            if ($request->hasFile('photo')) {
+                $file = $request->file('photo');
+                
+                // Delete old photo if exists
+                if ($product->photo) {
+                    $oldPath = public_path('uploads/' . $product->photo);
+                    if (file_exists($oldPath)) {
+                        unlink($oldPath);
+                    }
+                }
+                
+                // Generate timestamp and clean filename
+                $timestamp = '1744481138_';
+                $filename = $timestamp . $file->getClientOriginalName();
+                
+                // Move file to uploads directory
+                $file->move(public_path('uploads/products'), $filename);
+                $product->photo = 'products/' . $filename;
 			}
 
 			$product->save();
