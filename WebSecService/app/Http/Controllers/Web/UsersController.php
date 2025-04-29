@@ -12,7 +12,6 @@ use Artisan;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Laravel\Socialite\Facades\Socialite;
 
 class UsersController extends Controller {
 
@@ -98,14 +97,17 @@ class UsersController extends Controller {
                 ['guard_name' => 'web']
             );
 
-            // Get or create Buy Item permission
-            $buyItemPermission = Permission::firstOrCreate(
-                ['name' => 'buy item'],
-                [
+            // Get the existing buy_item permission
+            $buyItemPermission = Permission::where('name', 'buy_item')->first();
+            
+            if (!$buyItemPermission) {
+                // Create it only if it doesn't exist
+                $buyItemPermission = Permission::create([
+                    'name' => 'buy_item',
                     'display_name' => 'Buy Item',
                     'guard_name' => 'web'
-                ]
-            );
+                ]);
+            }
 
             // Assign role and permission to user
             $user->assignRole($customerRole);
@@ -115,6 +117,10 @@ class UsersController extends Controller {
             Artisan::call('cache:clear');
             
             DB::commit();
+            
+            // Log in the user automatically after registration
+            Auth::login($user);
+            
             return redirect('/');
         } catch (\Exception $e) {
             DB::rollBack();

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Permission;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -82,15 +83,20 @@ class RegisterController extends Controller
     
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => 'Customer'
         ]);
 
-        $user->role = 'Customer';
-        $user->save();
-    
-        return redirect()->route('home');
+        // Assign customer role which should already have buy_item permission
+        $user->assignRole('Customer');
+        
+        // Auto login the user right after registration
+        auth()->login($user);
+        
+        // Redirect to dashboard
+        return $user;
     }
 }

@@ -7,7 +7,6 @@ use DB;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller {
 

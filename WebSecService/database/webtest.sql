@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2025 at 12:59 AM
+-- Generation Time: Apr 29, 2025 at 07:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -122,7 +122,7 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:5:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:12:\"display_name\";s:1:\"d\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:8:{i:0;a:5:{s:1:\"a\";i:1;s:1:\"b\";s:12:\"add_products\";s:1:\"c\";s:12:\"Add Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:1;a:5:{s:1:\"a\";i:2;s:1:\"b\";s:13:\"edit_products\";s:1:\"c\";s:13:\"Edit Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:5:{s:1:\"a\";i:3;s:1:\"b\";s:15:\"delete_products\";s:1:\"c\";s:15:\"Delete Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:5:{s:1:\"a\";i:4;s:1:\"b\";s:10:\"show_users\";s:1:\"c\";s:10:\"Show Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:4;a:5:{s:1:\"a\";i:5;s:1:\"b\";s:10:\"edit_users\";s:1:\"c\";s:10:\"Edit Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:5;a:5:{s:1:\"a\";i:7;s:1:\"b\";s:12:\"delete_users\";s:1:\"c\";s:12:\"Delete Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:5:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"admin_users\";s:1:\"c\";s:11:\"Admin Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:5:{s:1:\"a\";i:9;s:1:\"b\";s:8:\"buy_item\";s:1:\"c\";s:8:\"Buy Item\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:3;}}}s:5:\"roles\";a:3:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"d\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:8:\"Employee\";s:1:\"d\";s:3:\"web\";}i:2;a:3:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"Customer\";s:1:\"d\";s:3:\"web\";}}}', 1745770901);
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:5:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:12:\"display_name\";s:1:\"d\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:8:{i:0;a:5:{s:1:\"a\";i:1;s:1:\"b\";s:12:\"add_products\";s:1:\"c\";s:12:\"Add Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:1;a:5:{s:1:\"a\";i:2;s:1:\"b\";s:13:\"edit_products\";s:1:\"c\";s:13:\"Edit Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:5:{s:1:\"a\";i:3;s:1:\"b\";s:15:\"delete_products\";s:1:\"c\";s:15:\"Delete Products\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:5:{s:1:\"a\";i:4;s:1:\"b\";s:10:\"show_users\";s:1:\"c\";s:10:\"Show Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:4;a:5:{s:1:\"a\";i:5;s:1:\"b\";s:10:\"edit_users\";s:1:\"c\";s:10:\"Edit Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:5;a:5:{s:1:\"a\";i:7;s:1:\"b\";s:12:\"delete_users\";s:1:\"c\";s:12:\"Delete Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:5:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"admin_users\";s:1:\"c\";s:11:\"Admin Users\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:5:{s:1:\"a\";i:9;s:1:\"b\";s:8:\"buy_item\";s:1:\"c\";s:8:\"Buy Item\";s:1:\"d\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:3;}}}s:5:\"roles\";a:3:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"d\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:8:\"Employee\";s:1:\"d\";s:3:\"web\";}i:2;a:3:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"Customer\";s:1:\"d\";s:3:\"web\";}}}', 1745989357);
 
 -- --------------------------------------------------------
 
@@ -169,7 +169,8 @@ INSERT INTO `credit_transactions` (`id`, `employee_id`, `customer_id`, `amount`,
 (30, 2, 59, -110000.00, '2025-04-25 04:58:43'),
 (31, 2, 59, 110000.00, '2025-04-25 04:58:51'),
 (32, 2, 59, -110000.00, '2025-04-26 18:16:32'),
-(33, 2, 59, 110000.00, '2025-04-26 18:16:40');
+(33, 2, 59, 110000.00, '2025-04-26 18:16:40'),
+(34, 2, 67, 105000.00, '2025-04-29 05:03:17');
 
 -- --------------------------------------------------------
 
@@ -276,6 +277,13 @@ CREATE TABLE `model_has_permissions` (
   `model_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `model_has_permissions`
+--
+
+INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) VALUES
+(9, 'App\\Models\\User', 67);
+
 -- --------------------------------------------------------
 
 --
@@ -299,7 +307,9 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (3, 'App\\Models\\User', 30),
 (3, 'App\\Models\\User', 36),
 (3, 'App\\Models\\User', 55),
-(3, 'App\\Models\\User', 59);
+(3, 'App\\Models\\User', 59),
+(3, 'App\\Models\\User', 67),
+(3, 'AppModelsUser', 67);
 
 -- --------------------------------------------------------
 
@@ -529,7 +539,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('yIHZDAZyHbVdzBF8tk3x6SjeSeXEpefZd1iA9qzB', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiR0ZBMjNKVGJTc0YzZ3FpMGFHQ3QyclNQQ1l3MW5mMjQ2VFlMSklXZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6InVlVGJaR3lrajI3RHFaanQ1TU05ZzM5NHR0TVZkOTBIMTlaWXU4OG0iO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc0NTY4NDQ5OTt9czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozMDoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3Byb2R1Y3RzIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1745708321);
+('joA1DqV2kJX4ldCQo70OxJOtKRxajdhw0ga3yU6N', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMHpyYlNKcUtpNXJxR0xOSG5jSnBiUnZ5RG9XdzBEdzFFME1GRnR4TSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7fX0=', 1745903030),
+('M00DCcLJDxXXk0EXHGRFd6pvVqoxkvdpDYaRyczM', 62, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiRURIdG51amdwNXYyZzhrNVA5cllHamJEU1QzVjVSc0RyV3lTTm8xYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9maWxlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NjI7fQ==', 1745834384);
 
 -- --------------------------------------------------------
 
@@ -563,7 +574,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (2, 'Andrew', 'universe25349@gmail.com', NULL, '$2y$12$FX/APZcIQSKtTzYMqFt0KOtwOnQTSB0uyHWzzixRKEw6p216Y2hcS', NULL, '2025-04-11 10:47:09', '2025-04-11 10:47:09', 0.00, NULL, NULL, NULL, NULL, NULL),
 (22, 'Amjad', 'Allinonev14-250@outlook.com', NULL, '$2y$12$.AX9JY1ClaxN.m5FEppADepzyse9tZrOKH4x/uJOYpfO8HB16qyWy', NULL, '2025-04-11 19:31:07', '2025-04-11 19:31:07', 200000.00, NULL, NULL, NULL, NULL, NULL),
 (55, 'Yousef', 'hazemsalam33@gmail.com', NULL, '$2y$12$UQodP1O0GDhthTNGu6SGbOMJnmJ/tzxauLzjuINQP1e6xQlIOkSw6', NULL, '2025-04-12 22:42:50', '2025-04-12 22:42:50', 180000.00, NULL, NULL, NULL, NULL, NULL),
-(59, 'Mohamed', 'lima.sam2025@outlook.com', NULL, '$2y$12$HrkEUQ5xBHzIRDfF7vhI2.ZeOICg7UPVLnwmtugDlcKxYKcTS2x66', NULL, '2025-04-20 14:52:19', '2025-04-20 14:52:19', 110000.00, NULL, NULL, NULL, NULL, NULL);
+(59, 'Mohamed', 'lima.sam2025@outlook.com', NULL, '$2y$12$HrkEUQ5xBHzIRDfF7vhI2.ZeOICg7UPVLnwmtugDlcKxYKcTS2x66', NULL, '2025-04-20 14:52:19', '2025-04-20 14:52:19', 110000.00, NULL, NULL, NULL, NULL, NULL),
+(67, 'Seif Wael', 'hazem2006321@gmail.com', NULL, '$2y$12$u/FsvLckNK3aGqNY1w2YeeAJPFE2R0jBANRzjLupcxHK5.ZopRHwy', NULL, '2025-04-29 02:02:37', '2025-04-29 02:02:37', 105000.00, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Triggers `users`
@@ -571,13 +583,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 DELIMITER $$
 CREATE TRIGGER `after_user_insert` AFTER INSERT ON `users` FOR EACH ROW BEGIN
     INSERT INTO model_has_roles (role_id, model_type, model_id)
-    SELECT r.id, 'App\Models\User', NEW.id
+    SELECT r.id, 'AppModelsUser', NEW.id
     FROM roles r
     WHERE r.name = 'Customer'
     AND NOT EXISTS (
         SELECT 1 FROM model_has_roles 
         WHERE model_id = NEW.id 
-        AND model_type = 'App\Models\User'
+        AND model_type = 'AppModelsUser'
     );
 END
 $$
@@ -729,7 +741,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `credit_transactions`
 --
 ALTER TABLE `credit_transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -753,7 +765,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -777,7 +789,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Constraints for dumped tables
