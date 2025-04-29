@@ -221,12 +221,37 @@ class ProductsController extends Controller {
 		try {
 			DB::beginTransaction();
 			
-			// Call the stored procedure to handle the return
-			DB::select('CALL return_product(?, ?)', [$user_id, $product_id]);
+			// Check if the purchase exists
+			$purchase = DB::table('purchases')
+				->where('user_id', $user_id)
+				->where('product_id', $product_id)
+				->first();
+			
+			if (!$purchase) {
+				throw new \Exception('Purchase not found');
+			}
+			
+			// Get the product price for the success message
+			$product = DB::table('products')->where('id', $product_id)->first();
+			
+			if (!$product) {
+				throw new \Exception('Product not found');
+			}
+			
+			// Delete the purchase - this will trigger the after_purchase_delete trigger
+			// which will automatically:
+			// 1. Refund the user by adding the product price to their credit
+			// 2. Increment the product quantity
+			DB::table('purchases')
+				->where('user_id', $user_id)
+				->where('product_id', $product_id)
+				->delete();
+			
+			// No longer logging the transaction in credit_transactions to keep it out of credit history
 			
 			DB::commit();
 			
-			return redirect()->back()->with('success', 'Product returned successfully.');
+			return redirect()->back()->with('success', 'Product returned successfully. $' . number_format($product->price, 2) . ' has been credited to your account.');
 		} catch (\Exception $e) {
 			DB::rollBack();
 			return redirect()->back()->with('error', 'Failed to return product. ' . $e->getMessage());

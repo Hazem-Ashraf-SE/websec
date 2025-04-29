@@ -57,7 +57,7 @@
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
           @endcan
-          @if(auth()->user()->hasRole('Employee') && $user->hasRole('Customer'))
+          @if((auth()->user()->hasRole('Employee') || auth()->user()->hasRole('Customer')) && $user->hasRole('Customer'))
             <form action="{{ route('users.charge-credit', $user) }}" method="POST" class="d-inline">
               @csrf
               <div class="input-group" style="width: 300px;">
@@ -67,7 +67,7 @@
               </div>
             </form>
           @endif
-          @if(auth()->user()->hasRole('Employee') && $user->hasRole('Customer'))
+          @if((auth()->user()->hasRole('Employee') || auth()->user()->hasRole('Customer')) && $user->hasRole('Customer'))
             <form action="{{ route('users.reset-credit', $user) }}" method="POST" class="d-inline">
               @csrf
               <div class="input-group" style="width: 300px;">

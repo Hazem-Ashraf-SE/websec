@@ -16,11 +16,6 @@ class CreditController extends Controller
 
     public function chargeCredit(Request $request, User $user)
     {
-        // Check if the current user is an employee
-        if (!auth()->user()->hasRole('Employee')) {
-            return redirect()->back()->with('error', 'Only employees can charge credit.');
-        }
-
         $request->validate([
             'amount' => 'required|numeric|min:0.01|max:999999999.99'
         ], [
@@ -32,12 +27,17 @@ class CreditController extends Controller
 
         try {
             DB::beginTransaction();
-
-            // Call the stored procedure to charge credit
-            DB::select('CALL charge_customer_credit(?, ?, ?)', [
-                auth()->id(),
-                $user->id,
-                $request->amount
+            
+            // Directly update the user's credit instead of using the stored procedure
+            $user->credit += $request->amount;
+            $user->save();
+            
+            // Log the transaction
+            DB::table('credit_transactions')->insert([
+                'employee_id' => auth()->id(),
+                'customer_id' => $user->id,
+                'amount' => $request->amount,
+                'transaction_date' => now()
             ]);
 
             DB::commit();
@@ -50,19 +50,25 @@ class CreditController extends Controller
 
     public function resetCredit(Request $request, User $user)
     {
-        // Check if the current user is an employee
-        if (!auth()->user()->hasRole('Employee')) {
-            return redirect()->back()->with('error', 'Only employees can reset credit.');
-        }
-
         try {
             DB::beginTransaction();
-
-            // Call the stored procedure to reset credit
-            DB::select('CALL reset_customer_credit(?, ?)', [
-                auth()->id(),
-                $user->id
-            ]);
+            
+            // Get current credit amount for transaction record
+            $currentCredit = $user->credit;
+            
+            // Directly reset the user's credit instead of using the stored procedure
+            $user->credit = 0;
+            $user->save();
+            
+            // Log the transaction (negative amount to show credit was removed)
+            if ($currentCredit > 0) {
+                DB::table('credit_transactions')->insert([
+                    'employee_id' => auth()->id(),
+                    'customer_id' => $user->id,
+                    'amount' => -$currentCredit, // Negative amount to show credit was reset
+                    'transaction_date' => now()
+                ]);
+            }
 
             DB::commit();
             return redirect()->back()->with('success', 'Credit reset successfully to $0.00');
