@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\ProductsController;
 use App\Http\Controllers\Web\UsersController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CryptographyController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('register', [UsersController::class, 'register'])->name('register');
@@ -78,6 +79,9 @@ Route::get('/even', function () {
 Route::get('/prime', function () {
     return view('prime');
 });
+
+Route::get('/cryptography', [CryptographyController::class, 'index'])->name('cryptography');
+Route::post('/cryptography/process', [CryptographyController::class, 'process'])->name('cryptography.process');
 
 Route::get('/test', function () {
     return view('test');
