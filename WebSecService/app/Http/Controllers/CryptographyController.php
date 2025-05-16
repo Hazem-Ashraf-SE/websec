@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class CryptographyController extends Controller
@@ -33,15 +34,93 @@ class CryptographyController extends Controller
                     $result = Hash::make($textData);
                     break;
                 case 'sign':
-                    // For signature, we'd typically use private key to sign
-                    // This is a simplified implementation
-                    $result = Hash::make($textData);
+                    // Use the PFX certificate to sign the data
+                    $pfxPath = storage_path('app/private/useremail@domain.com.pfx');
+                    $pfxPassword = '12345678';
+                    
+                    // Check if the PFX file exists
+                    if (!file_exists($pfxPath)) {
+                        throw new \Exception('Certificate file not found');
+                    }
+                    
+                    // Load the PFX certificate
+                    $certData = file_get_contents($pfxPath);
+                    $certs = [];
+                    
+                    // Extract the private key from the PFX
+                    if (!openssl_pkcs12_read($certData, $certs, $pfxPassword)) {
+                        throw new \Exception('Unable to read the certificate. Invalid password or certificate format.');
+                    }
+                    
+                    // Get the private key
+                    $privateKey = $certs['pkey'];
+                    
+                    // Create a signature
+                    $signature = null;
+                    if (!openssl_sign($textData, $signature, $privateKey, OPENSSL_ALGO_SHA256)) {
+                        throw new \Exception('Failed to create signature');
+                    }
+                    
+                    // Base64 encode the signature for display
+                    $result = base64_encode($signature);
                     break;
                 case 'verify':
-                    $originalHash = $request->input('result_field');
-                    $isValid = Hash::check($textData, $originalHash);
-                    $result = $isValid ? 'Verification successful' : 'Verification failed';
-                    $status = $isValid ? 'success' : 'failed';
+                    $signatureOrHash = $request->input('result_field');
+                    
+                    // Try to decode as base64 to check if it's a signature
+                    $decodedSignature = base64_decode($signatureOrHash, true);
+                    
+                    // If it's a valid base64 string and likely a signature
+                    if ($decodedSignature !== false && strlen($decodedSignature) > 20) {
+                        // This appears to be a certificate-based signature
+                        $pfxPath = storage_path('app/private/useremail@domain.com.pfx');
+                        $pfxPassword = '12345678';
+                        
+                        // Check if the PFX file exists
+                        if (!file_exists($pfxPath)) {
+                            throw new \Exception('Certificate file not found');
+                        }
+                        
+                        // Load the PFX certificate
+                        $certData = file_get_contents($pfxPath);
+                        $certs = [];
+                        
+                        // Extract the certificate from the PFX
+                        if (!openssl_pkcs12_read($certData, $certs, $pfxPassword)) {
+                            throw new \Exception('Unable to read the certificate. Invalid password or certificate format.');
+                        }
+                        
+                        // Get the certificate
+                        $cert = $certs['cert'];
+                        
+                        // Extract the public key from the certificate
+                        $publicKey = openssl_pkey_get_public($cert);
+                        if (!$publicKey) {
+                            throw new \Exception('Failed to extract public key from certificate');
+                        }
+                        
+                        // Verify the signature
+                        $isValid = openssl_verify($textData, $decodedSignature, $publicKey, OPENSSL_ALGO_SHA256);
+                        
+                        if ($isValid === 1) {
+                            $result = 'Certificate signature verification successful';
+                            $status = 'success';
+                        } elseif ($isValid === 0) {
+                            $result = 'Certificate signature verification failed';
+                            $status = 'failed';
+                        } else {
+                            throw new \Exception('Error during signature verification');
+                        }
+                        
+                        // Free the key resource
+                        openssl_free_key($publicKey);
+                    } else {
+                        // Regular hash verification
+                        $originalHash = $signatureOrHash;
+                        $isValid = Hash::check($textData, $originalHash);
+                        $result = $isValid ? 'Verification successful' : 'Verification failed';
+                        $status = $isValid ? 'success' : 'failed';
+                    }
                     break;
                 case 'rsa':
                     // For demonstration purposes, we'll use Laravel's built-in encryption

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resultFieldContainer.style.display = 'block';
             
             if (operation === 'verify') {
-                resultField.placeholder = 'Enter hash to verify against';
+                resultField.placeholder = 'Enter hash signature to verify';
             } else if (operation === 'key_send') {
                 resultField.placeholder = 'Enter public key for encryption';
             } else if (operation === 'key_receive') {
