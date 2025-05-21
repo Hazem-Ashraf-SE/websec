@@ -34,6 +34,13 @@ Route::post('products/{product}/buy', [ProductsController::class, 'buy'])->name(
 Route::put('products/{product}/update-quantity', [ProductsController::class, 'updateQuantity'])->name('products.update_quantity');
 Route::post('/products/return/{user_id}/{product_id}', [ProductsController::class, 'returnProduct'])->name('return_product');
 
+// Favorites routes
+Route::middleware(['auth'])->group(function () {
+    Route::post('favorites/toggle/{product}', [\App\Http\Controllers\Web\FavoritesController::class, 'toggle'])->name('favorites.toggle');
+    Route::get('favorites', [\App\Http\Controllers\Web\FavoritesController::class, 'list'])->name('favorites.list');
+    Route::get('favorites/check/{product}', [\App\Http\Controllers\Web\FavoritesController::class, 'check'])->name('favorites.check');
+});
+
 /*
 Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/employees/create', [UsersController::class, 'createEmployee'])->name('employees.create');

@@ -71,9 +71,16 @@
                 </div>
                 <div class="col col-sm-12 col-lg-8 mt-3">
                     <div class="row mb-2">
-                        <div class="col-8">
+                        <div class="col-6">
                             <h3>{{$product->name}}</h3>
                         </div>
+                        @if(auth()->user()->hasRole('Customer'))
+                        <div class="col col-2">
+                            <button class="btn form-control favorite-btn" data-product-id="{{ $product->id }}">
+                                <i class="fas fa-heart favorite-icon" id="favorite-icon-{{ $product->id }}"></i> <span id="favorite-text-{{ $product->id }}">Favorite</span>
+                            </button>
+                        </div>
+                        @endif
                         <div class="col col-2">
                             @can('edit_products')
                                 <a href="{{route('products_edit', $product->id)}}" class="btn btn-success form-control">Edit</a>
@@ -141,4 +148,68 @@
         </div>
     </div>
 @endforeach
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        // Add Font Awesome CSS if not already included
+        if (!$('link[href*="font-awesome"]').length) {
+            $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">');
+        }
+        
+        // Style for favorite buttons
+        $('.favorite-btn').each(function() {
+            const productId = $(this).data('product-id');
+            
+            // Check if product is in favorites
+            $.get(`{{ url('favorites/check') }}/${productId}`, function(response) {
+                if (response.is_favorite) {
+                    $(`#favorite-icon-${productId}`).addClass('text-danger');
+                    $(`#favorite-text-${productId}`).text('Remove');
+                    $(`.favorite-btn[data-product-id="${productId}"]`).addClass('btn-outline-danger');
+                } else {
+                    $(`#favorite-icon-${productId}`).addClass('text-secondary');
+                    $(`#favorite-text-${productId}`).text('Add to Favorites');
+                    $(`.favorite-btn[data-product-id="${productId}"]`).addClass('btn-outline-secondary');
+                }
+            });
+        });
+        
+        // Set up CSRF token for all AJAX requests
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+        
+        // Handle favorite button click
+        $('.favorite-btn').on('click', function() {
+            const productId = $(this).data('product-id');
+            const button = $(this);
+            const icon = $(`#favorite-icon-${productId}`);
+            const text = $(`#favorite-text-${productId}`);
+            
+            $.ajax({
+                url: `{{ url('favorites/toggle') }}/${productId}`,
+                type: 'POST',
+                success: function(response) {
+                    if (response.status === 'added') {
+                        icon.removeClass('text-secondary').addClass('text-danger');
+                        text.text('Remove');
+                        button.removeClass('btn-outline-secondary').addClass('btn-outline-danger');
+                    } else {
+                        icon.removeClass('text-danger').addClass('text-secondary');
+                        text.text('Add to Favorites');
+                        button.removeClass('btn-outline-danger').addClass('btn-outline-secondary');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', xhr, status, error);
+                    alert('Error updating favorites. Please try again.');
+                }
+            });
+        });
+    });
+</script>
 @endsection

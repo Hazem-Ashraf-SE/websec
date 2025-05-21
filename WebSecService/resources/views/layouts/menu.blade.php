@@ -19,6 +19,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('products_list')}}">Products</a>
             </li>
+            @auth
+                @if(auth()->user()->hasRole('Customer'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('favorites.list')}}">
+                        <i class="fas fa-heart text-danger"></i> My Favorites
+                    </a>
+                </li>
+                @endif
+            @endauth
             @can('show_users')
             <li class="nav-item">
                 <a class="nav-link" href="{{route('users')}}">Users</a>
